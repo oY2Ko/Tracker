@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Tracker.ViewModels" x:DataType="viewmodels:RegistrationPageViewModel"
+             x:Class="Tracker.Views.RegistrationPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name ="FirstNameEntry"  Placeholder="Enter your name" Text="{Binding FirstName}" VerticalOptions ="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="40,40,40,20"/>
+            <Entry x:Name="LastNameEntry" Placeholder="Enter your last name" Text="{Binding LastName}" VerticalOptions ="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="40,20,40,20"/>
+            <Entry x:Name="Login" Placeholder="Login" Text="{Binding Login}" VerticalOptions ="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="40,20,40,20"/>
+            <Entry x:Name ="PasswordEntry"  Placeholder="Password" Text="{Binding Password}" VerticalOptions ="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="50,20,50,20"/>
+            <Entry Placeholder="Enter the group number" Text="{Binding GroupNumber}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin=" 50,20,50,50"/>
+            <Button Text="Enter" Command="{Binding EnterButtonClickCommand}" HorizontalOptions="Center" VerticalOptions="StartAndExpand" Margin=" 40,40,40,40"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
