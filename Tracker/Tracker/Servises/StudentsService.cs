@@ -11,14 +11,13 @@ namespace Tracker.Servises
 {
     class StudentsService
     {
-        const string Url = "http://192.168.1.4:53002/api/Students/"; 
+        const string Url = "http://192.168.1.4:3000/api/Students/"; 
 
         JsonSerializerOptions options = new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true,
-            IncludeFields = true,
         };
-        // настройка клиента
+
         private HttpClient GetClient()
         {
             HttpClient client = new HttpClient();
@@ -26,7 +25,7 @@ namespace Tracker.Servises
             return client;
         }
 
-        // получаем всех студентов
+
         public async Task<IEnumerable<Student>> Get()
         {
             HttpClient client = GetClient();
@@ -34,7 +33,6 @@ namespace Tracker.Servises
             return JsonSerializer.Deserialize<IEnumerable<Student>>(result, options);
         }
 
-        // добавляем одного студента
         public async Task<Student> Add(Student student)
         {
             HttpClient client = GetClient();

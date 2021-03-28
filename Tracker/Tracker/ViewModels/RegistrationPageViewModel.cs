@@ -33,7 +33,7 @@ namespace Tracker.ViewModels
                 // если активно подключение через Wi-Fi
                 if (!(String.IsNullOrWhiteSpace(FirstName) && String.IsNullOrWhiteSpace(LastName) && String.IsNullOrWhiteSpace(GroupNumber) && String.IsNullOrWhiteSpace(Login) && String.IsNullOrWhiteSpace(Password)))
                 {
-                    await studentsService.Add(new Student(1, Login, Password, new StudentProfile(FirstName, LastName, GroupNumber)));
+                    await studentsService.Add(new Student(Login, Password, new StudentProfile(FirstName, LastName, GroupNumber)));
                     await Application.Current.MainPage.Navigation.PushAsync(new MainPage());
                 }
             //}
